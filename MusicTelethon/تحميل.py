@@ -18,7 +18,7 @@ async def song(client, message: Message):
     if not urlissed:
         await client.send_message(            message.chat.id,            "صيغة الأمر غير صالحة!",        )
         return
-    pablo = await client.send_message(message.chat.id, f"* جاري تحميل 🔎 ** `{urlissed}`")
+    pablo = await client.send_message(message.chat.id, f"* جاري التحميل .. ** `{urlissed}`")
     search = SearchVideos(f"{urlissed}", offset=1, mode="dict", max_results=1)
     mi = search.result()
     mio = mi["search_result"]
@@ -43,7 +43,7 @@ async def song(client, message: Message):
 ** ‹ بواسطة :** {message.from_user.mention}
 """
     file_stark = f"{ytdl_data['id']}.mp3"
-    await client.send_audio(        message.chat.id,        audio=open(file_stark, "rb"),        duration=int(ytdl_data["duration"]),        title=str(ytdl_data["title"]),        performer=str(ytdl_data["uploader"]),        thumb=sedlyf,        caption=capy,        progress=progress,        progress_args=(            pablo,            c_time,            f"**📥 تحميل** `{urlissed}`",            file_stark,        ),    )
+    await client.send_audio(        message.chat.id,        audio=open(file_stark, "rb"),        duration=int(ytdl_data["duration"]),        title=str(ytdl_data["title"]),        performer=str(ytdl_data["uploader"]),        thumb=sedlyf,        caption=capy,        progress=progress,        progress_args=(            pablo,            c_time,            f"**تحميل** `{urlissed}`",            file_stark,        ),    )
     await pablo.delete()
     for files in (sedlyf, file_stark):
         if files and os.path.exists(files):
