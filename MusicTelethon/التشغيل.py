@@ -67,7 +67,7 @@ async def ytdl(link):
     else:
         return 0, stderr.decode()
 
-@Client.on_message(filters.command(["تشغيل"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["شغل"], prefixes=f"{HNDLR}"))
 async def play(client, m: Message):
     replied = m.reply_to_message
     chat_id = m.chat.id
@@ -113,7 +113,7 @@ async def play(client, m: Message):
             await m.reply("الرد على ملف صوتي أو إعطاء شيء للبحث")
         else:
             await m.delete()
-            huehue = await m.reply("**.. جاري البحث عزيزي**")
+            huehue = await m.reply("**جاري البحث عزيزي ..**")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
