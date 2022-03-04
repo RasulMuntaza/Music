@@ -67,7 +67,7 @@ async def ytdl(link):
     else:
         return 0, stderr.decode()
 
-@Client.on_message(filters.command(["شغل"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["تشغيل"], prefixes=f"{HNDLR}"))
 async def play(client, m: Message):
     replied = m.reply_to_message
     chat_id = m.chat.id
@@ -101,7 +101,7 @@ async def play(client, m: Message):
                 add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await huehue.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/40c0ab31719a780e37b5c.jpg",
+                    photo="https://telegra.ph/DroxTeAm-03-04",
                     caption=f"""
 **‹ العنوان : [{songname}]({link})
 ‹ ايدي المحادثه : {chat_id}
@@ -113,7 +113,7 @@ async def play(client, m: Message):
             await m.reply("الرد على ملف صوتي أو إعطاء شيء للبحث")
         else:
             await m.delete()
-            huehue = await m.reply("**جاري البحث عزيزي ..**")
+            huehue = await m.reply("**.. جاري البحث عزيزي**")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
@@ -195,7 +195,7 @@ async def vplay(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/40c0ab31719a780e37b5c.jpg",
+                    photo="https://telegra.ph/DroxTeAm-03-04",
                     caption=f"""
 **‹ العنوان : [{songname}]({link})
 ‹ ايدي المحادثه : {chat_id}
@@ -218,7 +218,7 @@ async def vplay(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/40c0ab31719a780e37b5c.jpg",
+                    photo="https://telegra.ph/DroxTeAm-03-04",
                     caption=f"""
 **‹ العنوان : [{songname}]({link})
 ‹ ايدي المحادثه : {chat_id}
@@ -230,7 +230,7 @@ async def vplay(client, m: Message):
             await m.reply(                "**الرد على ملف صوتي أو إعطاء شيء للبحث**"            )
         else:
             await m.delete()
-            huehue = await m.reply("*.. جاري البحث")
+            huehue = await m.reply(".. جاري البحث")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             Q = 720
